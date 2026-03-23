@@ -1,13 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    @apply bg-background text-foreground font-body;
-  }
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-primary: #2563eb;
+  --color-secondary: #64748b;
+  --color-accent: #f59e0b;
+  --color-muted: #f1f5f9;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading text-foreground;
-  }
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Inter, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Inter, sans-serif;
+  color: var(--color-foreground);
 }
