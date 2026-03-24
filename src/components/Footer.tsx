@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import TakatStrip from '@/components/TakatStrip';
-import { MapPin, Phone, Mail as, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
