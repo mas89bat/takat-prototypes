@@ -1,8 +1,27 @@
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import DiscoverSection from "@/components/DiscoverSection";
+import LighthouseSection from "@/components/LighthouseSection";
+import ExperiencesSection from "@/components/ExperiencesSection";
+import StaySection from "@/components/StaySection";
+import AgendaSection from "@/components/AgendaSection";
+import GallerySection from "@/components/GallerySection";
+import NewsletterSection from "@/components/NewsletterSection";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-2xl">takat.ai Prototype</h1>
-      <p className="text-muted-foreground">Build agent will generate sections here.</p>
-    </div>
+    <>
+      <Header />
+      <HeroSection />
+      <DiscoverSection />
+      <LighthouseSection />
+      <ExperiencesSection />
+      <StaySection />
+      <AgendaSection />
+      <GallerySection />
+      <NewsletterSection />
+      <Footer />
+    </>
   );
 }
