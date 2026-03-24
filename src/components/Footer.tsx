@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import TakatStrip from '@/components/TakatStrip';
-import { MapPin, Phone, Mail, Linkedin, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, LinkedinIcon as LinkedinIcon, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -66,7 +66,7 @@ const Footer = () => {
               <li className="flex items-start"><MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" /><span>Office de Tourisme des Abers, 29870 Lannilis</span></li>
               <li className="flex items-center"><Phone className="h-4 w-4 mr-3" /><a href="tel:+33298040543" className="hover:text-accent transition-colors">02 98 04 05 43</a></li>
               <li className="flex items-center"><Mail className="h-4 w-4 mr-3" /><a href="mailto:contact@abers-tourisme.com" className="hover:text-accent transition-colors">contact@abers-tourisme.com</a></li>
-              <li className="flex items-center"><Linkedin className="h-4 w-4 mr-3" /><a href="#" className="hover:text-accent transition-colors">LinkedIn</a></li>
+              <li className="flex items-center"><LinkedinIcon className="h-4 w-4 mr-3" /><a href="#" className="hover:text-accent transition-colors">LinkedIn</a></li>
             </ul>
           </div>
         </div>
