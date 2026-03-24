@@ -1,43 +1,59 @@
 'use client';
-import { useEffect, useState, useRef } from "react";
 
-interface Props {
-  end: number;
-  suffix?: string;
-  prefix?: string;
+import { useEffect, useRef, useState } from 'react';
+import { animate } from 'framer-motion';
+
+interface CounterProps {
+  from?: number;
+  to: number;
   duration?: number;
+  className?: string;
 }
 
-export default function Counter({ end, suffix = "", prefix = "", duration = 2000 }: Props) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const hasAnimated = useRef(false);
+const Counter = ({ from = 0, to, duration = 2, className }: CounterProps) => {
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          const startTime = Date.now();
-          const animate = () => {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.round(eased * end));
-            if (progress < 1) requestAnimationFrame(animate);
-          };
-          requestAnimationFrame(animate);
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [end, duration]);
+    const node = nodeRef.current;
+    if (!node) return;
 
-  return (
-    <span ref={ref}>
-      {prefix}{count}{suffix}
-    </span>
-  );
-}
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isInView) {
+      const node = nodeRef.current;
+      if (!node) return;
+
+      const controls = animate(from, to, {
+        duration,
+        ease: 'easeOut',
+        onUpdate(value) {
+          node.textContent = Math.round(value).toLocaleString('fr-FR');
+        },
+      });
+
+      return () => controls.stop();
+    }
+  }, [isInView, from, to, duration]);
+
+  return <span ref={nodeRef} className={className}>{from.toLocaleString('fr-FR')}</span>;
+};
+
+export default Counter;

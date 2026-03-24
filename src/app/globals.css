@@ -17,27 +17,39 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* Brand colors from creative brief */
+  --color-navy: oklch(18% 0.02 230);
+  --color-primary-brand: oklch(30% 0.08 200);
+  --color-cream: oklch(100% 0.0 0);
+  --color-sage: oklch(75% 0.1 80); /* This is more of a gold, but named sage as per brief structure */
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
 }
 
 :root {
   --radius: 0.5rem;
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #2563eb;
-  --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #f59e0b;
-  --accent-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #2563eb;
+  --background: oklch(100% 0.0 0);
+  --foreground: oklch(20% 0.01 240);
+  --primary: oklch(30% 0.08 200);
+  --primary-foreground: oklch(100% 0.0 0);
+  --secondary: oklch(94% 0.01 90);
+  --secondary-foreground: oklch(20% 0.01 240);
+  --muted: oklch(100% 0.0 0);
+  --muted-foreground: oklch(55% 0.005 210);
+  --accent: oklch(75% 0.1 80);
+  --accent-foreground: oklch(30% 0.08 200); /* Overridden for accessibility from white */
+  --border: oklch(0.88 0.01 80);
+  --input: oklch(0.88 0.01 80);
+  --ring: oklch(30% 0.08 200);
+
+  --card: oklch(100% 0.0 0);
+  --card-foreground: oklch(20% 0.01 240);
+  --popover: oklch(100% 0.0 0);
+  --popover-foreground: oklch(20% 0.01 240);
 }
 
 body {
-  font-family: var(--font-geist-sans, 'Inter', system-ui, sans-serif);
+  font-family: var(--font-body);
   background-color: var(--background);
   color: var(--foreground);
 }
