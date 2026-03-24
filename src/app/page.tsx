@@ -1,3 +1,4 @@
+'use client';
 import { motion } from 'framer-motion';
 import AnimatedSection from '@/components/AnimatedSection';
 import Counter from '@/components/Counter';
@@ -5,10 +6,10 @@ import Link from 'next/link';
 import { 
     ChevronRight, 
     ChevronDown, 
-    Ship, 
-    Lighthouse, 
+    Sailboat, 
+    Landmark, 
     Compass, 
-    Hiking 
+    Mountain 
 } from 'lucide-react';
 
 const services = [
@@ -17,7 +18,7 @@ const services = [
     subtitle: "Le plus haut d'Europe",
     description: "Prenez la mer pour découvrir ce site exceptionnel et son petit frère transformé en écogîte.",
     imageUrl: "https://www.abers-tourisme.com/assets/uploads/sites/8/2022/08/kayak-ile-vierge-clo-et-clem-680x453.jpg",
-    icon: Lighthouse
+    icon: Landmark
   },
   {
     title: "Phare de Lanvaon",
@@ -31,14 +32,14 @@ const services = [
     subtitle: "Le plus grand des Abers",
     description: "Explorez le plus grand des deux abers en kayak pour une immersion totale dans la nature.",
     imageUrl: "https://www.abers-tourisme.com/assets/uploads/sites/8/2022/12/laber-wrach-680x453.jpg",
-    icon: Ship
+    icon: Sailboat
   },
   {
     title: "Randonnée sur le GR34",
     subtitle: "Le sentier des douaniers",
     description: "Parcourez des paysages côtiers préservés et profitez du grand air iodé.",
     imageUrl: "https://www.abers-tourisme.com/assets/uploads/sites/8/2022/10/123-sb-plouguerneau-balade-camping-du-phare-de-lile-vierge-jusqua-roch-pelguent-hdjeremyjehanin-2024-scaled.jpg",
-    icon: Hiking
+    icon: Mountain
   }
 ];
 
