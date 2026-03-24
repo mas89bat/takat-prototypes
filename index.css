@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(20% 0.01 240);
+  --color-navy: oklch(18% 0.02 230);
+  --color-sand: oklch(100% 0 0);
+  --color-teal: oklch(30% 0.08 200);
+  --color-copper: oklch(75% 0.1 80);
+  --font-display: 'Sora', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-accent: 'IBM Plex Mono', cursive;
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.12); }
+}
+
+@keyframes wave-drift {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-25px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-kenburns {
+  animation: kenburns 12s ease-in-out infinite alternate;
+}
+
+.wave-animate {
+  animation: wave-drift 8s ease-in-out infinite;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
